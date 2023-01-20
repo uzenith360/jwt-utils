@@ -5,9 +5,7 @@ import JwtInterface from './jwt.interface';
 export class JwtUtils {
     private static _instance: JwtUtils;
 
-    private readonly jwtSecret: string;
-
-    private constructor(jwtSecret: string) {
+    private constructor(private readonly jwtSecret: string) {
         this.jwtSecret = jwtSecret;
     }
 
