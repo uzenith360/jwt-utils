@@ -9,12 +9,24 @@ export class JwtUtils {
         this.jwtSecret = jwtSecret;
     }
 
+    /**
+     * Synchronously sign the given payload into a JSON Web Token string payload - Payload to sign, 
+     * could be an literal, buffer or string secretOrPrivateKey - Either the secret for HMAC algorithms, 
+     * or the PEM encoded private key for RSA and ECDSA. 
+     * returns - A JwtInterface object
+     * 
+     * @param payload object
+     * @param expiresIn expressed in seconds or a string describing a time span zeit/ms. Eg: 60, "2 days", "10h", "7d"
+     * @param type jwtTokenTypeEnum defaulting to 'bearer'
+     * @returns
+     */
     public sign<T>(
         payload: T extends object ? T : object,
+        expiresIn: string | number = '8h',
         type: jwtTokenTypeEnum = jwtTokenTypeEnum.bearer,
     ): JwtInterface {
         return {
-            access_token: sign(payload, this.jwtSecret),
+            access_token: sign(payload, this.jwtSecret, { expiresIn, }),
             token_type: type,
         };
     }
