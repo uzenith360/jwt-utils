@@ -1,6 +1,6 @@
 import { sign } from 'jsonwebtoken';
-import jwtTokenTypeEnum from './jwt-token-type.enum';
-import JwtInterface from './jwt.interface';
+import { jwtTokenTypeEnum } from './jwt-token-type.enum';
+import { JwtInterface } from './jwt.interface';
 
 export class JwtUtils {
     private static _instance: JwtUtils;

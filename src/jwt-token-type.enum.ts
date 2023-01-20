@@ -1,5 +1,3 @@
-enum jwtTokenTypeEnum {
+export enum jwtTokenTypeEnum {
     bearer = 'Bearer',
-}
-
-export default jwtTokenTypeEnum;
+};

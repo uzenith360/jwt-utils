@@ -1,9 +1,8 @@
 import { JwtUtils } from "./jwt-utils";
 
+export { jwtTokenTypeEnum } from './jwt-token-type.enum';
+export { JwtInterface } from './jwt.interface';
 export { JwtUtils } from "./jwt-utils";
-export * as JwtInterface from './jwt.interface';
-export * as jwtTokenTypeEnum from './jwt-token-type.enum';
-
 export default {
     JwtUtils,
 };

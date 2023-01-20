@@ -1,6 +1,6 @@
-import jwtTokenTypeEnum from "./jwt-token-type.enum";
+import { jwtTokenTypeEnum } from "./jwt-token-type.enum";
 
-export default interface JwtInterface {
+export interface JwtInterface {
     access_token: string;
     token_type?: jwtTokenTypeEnum;
 }
