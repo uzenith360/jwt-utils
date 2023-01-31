@@ -58,12 +58,6 @@
     "mocha": "^10.2.0",
     "ts-node": "^10.9.1"
   },
-  "release": {
-    "branches": [
-      "main",
-      "master"
-    ]
-  },
   "dependencies": {
     "jsonwebtoken": "^9.0.0"
   }
