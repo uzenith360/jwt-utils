@@ -1,4 +1,5 @@
-import { sign } from 'jsonwebtoken';
+import { sign, verify } from 'jsonwebtoken';
+import { JwtPayload } from './jwt-payload.interface';
 import { jwtTokenTypeEnum } from './jwt-token-type.enum';
 import { JwtInterface } from './jwt.interface';
 
@@ -29,6 +30,14 @@ export class JwtUtils {
             access_token: sign(payload, this.jwtSecret, { expiresIn, }),
             token_type: type,
         };
+    }
+
+    public verify(token: string, jwtSecret: string): JwtPayload | string | null {
+        try {
+            return verify(token, jwtSecret);
+        } catch (e) {
+            return null;
+        }
     }
 
     public static getInstance(jwtSecret: string): JwtUtils {
