@@ -32,9 +32,9 @@ export class JwtUtils {
         };
     }
 
-    public verify(token: string, jwtSecret: string): JwtPayload | string | null {
+    public verify(token: string, jwtSecret: string, ignoreExpiration?: boolean): JwtPayload | string | null {
         try {
-            return verify(token, jwtSecret);
+            return verify(token, jwtSecret, { ignoreExpiration });
         } catch (e) {
             return null;
         }
